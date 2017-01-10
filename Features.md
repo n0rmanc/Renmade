@@ -11,6 +11,8 @@
   - If it is paid, then set it as visible.
   - Run a Crontab job to remove invisible products.
 - Static Product will belong to a Category
+
 ### Section Management
 - Enable/ Disable Section
+
 ### Order Management
