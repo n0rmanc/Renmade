@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Start Your Dev Environment.
 
-Things you may want to cover:
+1. Get the code.
+2. `$ docker-compose up`
+3. Browse `localhost:3000`
+4. You will get Rails up page.
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features.
