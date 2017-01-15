@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    # command: ./script/start
+    volumes:
+      - .:/renmade
+    volumes_from:
+      - box
+    links:
+      - db
+    ports:
+      - "3000:3000"
+  box:
+    image: busybox
+    volumes:
+      - /box
+
+volumes:
+  box:
+    driver: local
