@@ -1,0 +1,3 @@
+class DynamicProduct < Product
+  
+end

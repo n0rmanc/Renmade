@@ -1,1 +1,6 @@
-alksdjflkajslk
+- @products.each do |product|
+  .test= product.title
+  .category= product.category.name
+  - product.pictures.each do |picture|
+    .img= image_tag picture.asset
+  %hr
