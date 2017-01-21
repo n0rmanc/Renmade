@@ -59,3 +59,5 @@ gem 'haml-rails', '~> 0.9'
 gem 'seed_migration'
 # Install faker to prepare data
 gem 'faker'
+
+gem 'bootstrap-sass', '~> 3.3.6'
