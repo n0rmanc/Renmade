@@ -36,7 +36,7 @@ $(function(){
  				$('.frame.'+$genid).attr('src','http://renmade.co/assets/img/progress/'+$color+'.svg');
 				$('.frame.'+$genid).delay(100).queue(function(){
 	 				$('#btn_generate[data-gen="'+$genid+'"]').button('loading');
-					// 	$.GeneratorAPI($genid, $color);
+						$.GeneratorAPI($genid, $color);
 	 				$(this).dequeue();
  				});
 	 		}

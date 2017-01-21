@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :main, only: :index
   resources :products do
     member do
-      get :random
+      post :generate
     end
   end
   root 'main#index'
