@@ -1,0 +1,2 @@
+binding.pry
+json.extract! @static_product
