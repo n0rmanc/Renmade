@@ -1,0 +1,3 @@
+class StaticProduct < Product
+
+end
