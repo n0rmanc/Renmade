@@ -14,7 +14,8 @@ RSpec.describe ProductsController, type: :controller do
     end
     it 'response static product attriubtes same as its parent' do
       subject
-      JSON.parse(response.body)
+      binding.pry
+      # JSON.parse(response.body)
     end
   end
 end
