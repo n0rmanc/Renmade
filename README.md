@@ -7,5 +7,6 @@
 3. Browse `localhost:3000`
 4. You will get Rails up page.
 
-
+### Run binding.pry
+`docker-compose -f docker-compose.yml -f development.yml run --service-ports backend`
 ## Features.
