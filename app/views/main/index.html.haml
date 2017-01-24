@@ -15,18 +15,18 @@
           .row
             .col-lg-12
               .framediv.framediv-SweatShirt
-                =image_tag '004d8c.gif', class: 'frame frame-SweatShirt 4250A516', data: {color: "004d8c", gen: '4250A516'}
-              =image_tag 'sweatshirt_white_lay.png', class: 'background-tshirt 4250A516'
+                =image_tag '004d8c.gif', class: "frame frame-SweatShirt #{Product.first.id}", data: {color: "004d8c", gen: "#{Product.first.id}"}
+              =image_tag 'sweatshirt_white_lay.png', class: "background-tshirt #{Product.first.id}"
               .tshirtPrice.text-center
-                %span.normal_price_area.4250A516
+                %span.normal_price_area{class: "#{Product.first.id}"}
                   %span.currency
                     $
-                  %span.normal_price.4250A516
+                  %span.normal_price{class: "#{Product.first.id}"}
                     1080
-                %span.gen_price_area.4250A516
+                %span.gen_price_area{class: "#{Product.first.id}"}
                   %span.currency
                     $
-                  %span.gen_price.4250A516
+                  %span.gen_price{class: "#{Product.first.id}"}
                     1080
           .row.row-centered
             .col-md-4.col-centered
@@ -37,19 +37,19 @@
                       顏色 / color
                       %span.caret
                     %ul#color-tshirt.dropdown-menu.color-tshirt{"aria-labelledby" => "dropdownMenu1"}
-                      %li{"data-color" => "004d8c", "data-gen" => "4250A516", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
+                      %li{"data-color" => "004d8c", "data-gen" => "#{Product.first.id}", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
                         %a 海潛藍 / snorkel blue
-                      %li{"data-color" => "f7cac9", "data-gen" => "4250A516", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
+                      %li{"data-color" => "f7cac9", "data-gen" => "#{Product.first.id}", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
                         %a 石英粉 / rose quartz
-                      %li{"data-color" => "f7786b", "data-gen" => "4250A516", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
+                      %li{"data-color" => "f7786b", "data-gen" => "#{Product.first.id}", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
                         %a 橘桃粉 / peach echo
-                      %li{"data-color" => "fbe337", "data-gen" => "4250A516", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
+                      %li{"data-color" => "fbe337", "data-gen" => "#{Product.first.id}", "data-image" => "/assets/img/sweatshirt_white_lay.png"}
                         %a 毛茛黃 / buttercup
                 .btn-group{:role => "group"}
-                  %button#btn_generate.btn.btn-default{:autocomplete => "off", "data-gen" => "4250A516", "data-loading-text" => "製造中...", "data-pause-text" => "重新製造", :type => "button"}
+                  %button#btn_generate.btn.btn-default{:autocomplete => "off", "data-gen" => "#{Product.first.id}", "data-loading-text" => "製造中...", "data-pause-text" => "重新製造", :type => "button"}
                     製造 / make
                 .btn-group{:role => "group"}
-                  %button.btn.btn-default.addCar.4250A516{"data-category" => "Category_SweatShirt", "data-coloractive" => "0", "data-colors" => "[{\"Name\":\"海潛藍 \\/ snorkel blue\",\"Value\":\"004d8c\"},{\"Name\":\"石英粉 \\/ rose quartz\",\"Value\":\"f7cac9\"},{\"Name\":\"橘桃粉 \\/ peach echo\",\"Value\":\"f7786b\"},{\"Name\":\"毛茛黃 \\/ buttercup\",\"Value\":\"fbe337\"}]", "data-gen" => "4250A516", "data-sizeactive" => "2", "data-sizes" => "[\"XS\",\"S\",\"M\",\"L\",\"XL\"]", :type => "button"}
+                  %button.btn.btn-default.addCar{class: "#{Product.first.id}", "data-category" => "Category_SweatShirt", "data-coloractive" => "0", "data-colors" => "[{\"Name\":\"海潛藍 \\/ snorkel blue\",\"Value\":\"004d8c\"},{\"Name\":\"石英粉 \\/ rose quartz\",\"Value\":\"f7cac9\"},{\"Name\":\"橘桃粉 \\/ peach echo\",\"Value\":\"f7786b\"},{\"Name\":\"毛茛黃 \\/ buttercup\",\"Value\":\"fbe337\"}]", "data-gen" => "#{Product.first.id}", "data-sizeactive" => "2", "data-sizes" => "[\"XS\",\"S\",\"M\",\"L\",\"XL\"]", :type => "button"}
                     購買 / buy
     %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
       = image_tag 'left.png', class: 'glyphicon glyphicon-chevron-left'

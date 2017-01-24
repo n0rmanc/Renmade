@@ -128,18 +128,18 @@ $(function(){
 	});
 
 	$.GeneratorAPI = function($genid, $color) {
-        $.post("/generator/"+$genid, {'_token': $('meta[name="csrf-token"]').attr('content')})
+        $.post("products/" + $genid+ "/generate", {'_token': $('meta[name="csrf-token"]').attr('content')})
 		.done(function(data, textStatus, jqXHR) {
             $('#btn_generate[data-gen="'+$genid+'"]').button('pause');
 			$data = jQuery.parseJSON(jqXHR.responseText);
 			//Demo
-			console.log($data.OrginalCreator)
+			console.log($data.OrginalCreator);
 			 // $('.isOrginalCreator').html($data.OrginalCreator) //can paste the text to class='isOrginalCreator' in view/index.blade.php
 			//Demo
-			$('.frame.'+$genid).attr('src', '/assets/customer/'+$data.Image+'/'+$color+'.png');
-			$('[class*="addCar '+$genid+'"]').attr('id', $data.Image);
-			$('[class*="addCar '+$genid+'"]').attr('data-price', $data.Price);
-			$('.gen_price.'+$genid).text($data.Price);
+			$('.frame.'+$genid).attr('src', $data.product.pictures[0].asset);
+			$('[class*="addCar '+$genid+'"]').attr('id', $data.product.pictures[0].asset);
+			$('[class*="addCar '+$genid+'"]').attr('data-price', $data.product.price);
+			$('.gen_price.'+$genid).text($data.product.price);
             $('.gen_price_area.'+$genid).css({"text-decoration":"none", "color":"#ee3b64"});
             $('.normal_price_area.'+$genid).css('display','inline');
             $('#gencount').text($data.GenCount);
