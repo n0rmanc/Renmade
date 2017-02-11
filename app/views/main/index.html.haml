@@ -55,3 +55,28 @@
       = image_tag 'left.png', class: 'glyphicon glyphicon-chevron-left'
     %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
       = image_tag 'right.png', class: 'glyphicon glyphicon-chevron-right'
+
+
+%section#selected
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2 精選款
+        %hr.star-primary
+    .row
+      .col-lg-12
+        %ul.nav.nav-tabs{:role => "tablist"}
+          - @categories.each do |category|
+            %li{:role => "presentation"}
+              %a{"data-toggle" => "tab", :href => "##{category.id}", :role => "tab"}
+                = category.name
+      .row
+        .col-lg-12
+          .tab-content
+            - @categories.each do |category|
+              .tab-pane.active{:id => "#{category.id}", :role => "tabpanel"}
+                aslkfjalsjdflajsklf
+-# %section#selected
+-#   .container
+-#     .row
+-#       = console
