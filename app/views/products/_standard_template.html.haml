@@ -1,0 +1,19 @@
+- category.products.each do |product|
+  .col-sm-3.portfolio-item
+    .hovereffect
+      = link_to products_path(product), class: 'portfolio-link' do
+        = image_tag(product.pictures.first.asset, class: 'img-responsive')
+        .overlay
+          %h2
+            = product.short_description
+    .tshirtName.text-center
+    .tshirtPrice.text-center
+      = product.title
+    .tshirtPrice.text-center
+      %span{:style => "text-decoration: line-through;color: #EE3B64;"}
+        %span.currency
+          = "$ #{product.original_price}"
+      %span.currency
+        = "$ #{product.price}"
+    .tshirtBuy.text-center
+      %button.btn.btn-default.addCar{"data-category" => "{{$subItem->Category}}", "data-coloractive" => "{{$subItem->Color_Active}}", "data-colors" => "{{$subItem->Colors}}", "data-price" => "{{ $subItem->price }}", "data-sizeactive" => "{{$subItem->Size_Active}}", "data-sizes" => "{{$subItem->Sizes}}", :id => "{{ $subItem->ImageCustomer }}"} 購買

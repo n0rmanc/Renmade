@@ -75,7 +75,7 @@
           .tab-content
             - @categories.each do |category|
               .tab-pane.active{:id => "#{category.id}", :role => "tabpanel"}
-                aslkfjalsjdflajsklf
+                = render 'products/standard_template', category: category
 -# %section#selected
 -#   .container
 -#     .row
