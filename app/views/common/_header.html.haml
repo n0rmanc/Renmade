@@ -1,0 +1,25 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"}
+        = image_tag('logo_sm_renmade.png')
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.hidden
+          %a{:href => "#tshirt"}
+        %li.page-scroll
+          %a{:href => "/returnPolicy"} info
+        %li.page-scroll
+          %a{:href => "/#selected"} selected
+        %li.page-scroll
+          %a{:href => "/#special"} special
+        %li.page-scroll
+          %a{:href => "https://www.facebook.com/renmade", :target => "_blank"} facebook
+        %li.page-scroll
+          %a{:href => "/#about"}
+    / /.nav-collapse
