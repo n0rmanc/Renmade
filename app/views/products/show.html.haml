@@ -1,0 +1,59 @@
+= @product.title
+
+#StandartTemplateDetailDescription.portfolio-modal{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-12
+          .modal-body
+            %h2.portfolio-title
+              = @product.title
+            %hr.star-primary
+            = image_tag(@product.pictures.first.asset, class: 'img-responsive img-centered')
+            %p.portfolio-description
+              = @product.description
+            %ul.list-inline.item-details
+              %li
+                Website:
+                %strong
+                  %a{:href => "http://www.renmade.co"} renmade
+              %li
+                Date:
+                %strong
+                  %a{:href => "http://www.renmade.co"} 2016
+              %li
+                Service:
+                %strong
+                  %a{:href => "http://www.renmade.co"} 人類製造
+            !!! XML
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+              %i.fa.fa-times
+              Close
+            %button.btn.btn-default.addCar 加入購物車
+  :javascript
+    $(function(){
+        //$('#StandartTemplateDetailDescription').on('show.bs.modal', function (event) {
+            // $('body').addClass("modal-open");
+            //var data = $(event.relatedTarget);
+            // $(this).find('.portfolio-title').text(data.data('title'));
+            // $(this).find('.img-centered').attr('src',data.data('image'));
+            //$(this).find('.portfolio-description').html(data.data('description'));
+            // var BuyButton = $(this).find('.addCar');
+            // BuyButton.attr('id', data.attr('data-id'));
+            // BuyButton.attr('data-Sizes', data.attr('data-Sizes'));
+            // BuyButton.attr('data-SizeActive', data.attr('data-SizeActive'));
+            // BuyButton.attr('data-Colors', data.attr('data-Colors'));
+            // BuyButton.attr('data-ColorActive', data.attr('data-ColorActive'));
+            // BuyButton.attr('data-price', data.attr('data-price'));
+            // BuyButton.attr('data-category', data.attr('data-category'));
+
+        //});
+
+        //$('#StandartTemplateDetailDescription').on('hidden.bs.modal', function (event){
+            // $("body").removeClass("modal-open");
+
+        //});
+    });
