@@ -13,6 +13,8 @@ services:
       - db
     ports:
       - "3000:3000"
+    environment:
+      BUNDLE_PATH: /box
   box:
     image: busybox
     volumes:
