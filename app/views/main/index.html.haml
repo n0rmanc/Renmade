@@ -56,7 +56,6 @@
     %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
       = image_tag 'right.png', class: 'glyphicon glyphicon-chevron-right'
 
-
 %section#selected
   .container
     .row
@@ -66,17 +65,13 @@
     .row
       .col-lg-12
         %ul.nav.nav-tabs{:role => "tablist"}
-          - @categories.each do |category|
-            %li{:role => "presentation"}
+          - @categories.each_with_index do |category, index|
+            %li{:role => "presentation", class: "#{'active' if index == 0}"}
               %a{"data-toggle" => "tab", :href => "##{category.id}", :role => "tab"}
                 = category.name
       .row
         .col-lg-12
           .tab-content
-            - @categories.each do |category|
-              .tab-pane.active{:id => "#{category.id}", :role => "tabpanel"}
+            - @categories.each_with_index do |category, index|
+              .tab-pane{:id => "#{category.id}", :role => "tabpanel", class: "#{'active' if index == 0}"}
                 = render 'products/standard_template', category: category
--# %section#selected
--#   .container
--#     .row
--#       = console
