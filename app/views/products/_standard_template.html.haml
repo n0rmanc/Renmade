@@ -16,4 +16,11 @@
       %span.currency
         = "$ #{product.price}"
     .tshirtBuy.text-center
-      %button.btn.btn-default.addCar{"data-category" => "{{$subItem->Category}}", "data-coloractive" => "{{$subItem->Color_Active}}", "data-colors" => "{{$subItem->Colors}}", "data-price" => "{{ $subItem->price }}", "data-sizeactive" => "{{$subItem->Size_Active}}", "data-sizes" => "{{$subItem->Sizes}}", :id => "{{ $subItem->ImageCustomer }}"} 購買
+      %button.btn.btn-default.addCar{id: product.id,
+      data: { category:product.category.name,coloractive: 0,
+      colors: product.colors.select(:name, :value).to_json,
+      price: product.price,
+      sizeactive: 0,
+      sizes: product.sizes.select(:value).map(&:value),
+      id: product.id}}
+        購買
