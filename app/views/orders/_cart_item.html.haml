@@ -1,0 +1,32 @@
+.renamde-row-template{:style => "display: none; visibility: hidden;"}
+  %table.renmade-table{:id => ""}
+    %tr.renmade-table-mainrow
+      %td.col-md-1.no{:rowspan => "3"} 1
+      %td.col-md-2.image{:rowspan => "3"}
+        %img.img-rounded{:block => "", "data-holder-rendered" => "true", "display:" => "", :height => "100px", :style => "background: rgba(0, 0, 0, 0.2);", :width => "100px"}/
+      %td.col-md-2.title{:rowspan => "3", :style => "display: none;"}
+        %input.id{:type => "hidden"}/
+        %input.category{:type => "hidden"}/
+      %td.col-md-1.color
+        %select.color
+      %td.col-md-1.size
+        %select.size
+      %td.col-md-1.quantity
+        %input#prod1_qty2.quantity{:type => "text", :value => "1"}/
+      %td.col-md-1.price
+        %span.currency $
+        %span.amount
+      %td.col-md-1.subtotal
+        %span.currency $
+        %span.amount
+      %td.col-md-1.actions
+        .btn.btn-danger.btn-sm.removeitem
+          %i.glyphicon.glyphicon-remove.fa.fa-remove
+    %tr
+      %td.col-md-1.color
+        .renmade-Btn.additem 新增
+      %td.col-md-1.size
+      %td.col-md-1.quantity
+      %td.col-md-1.price
+      %td.col-md-1.subtotal
+      %td.col-md-1.actions

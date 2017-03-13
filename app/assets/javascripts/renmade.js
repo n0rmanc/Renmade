@@ -59,13 +59,13 @@ $(function(){
  	});
 
  	$('.addCar').click(function(){
- 		$id =  $(this).attr('id');
- 		$price = $(this).attr('data-price');
- 		$category = $(this).attr('data-category');
- 		$jColors = jQuery.parseJSON($(this).attr('data-colors'));
- 		$colorActive = $(this).attr('data-coloractive');
- 		$jSizes = jQuery.parseJSON($(this).attr('data-sizes'));
- 		$sizeActive = $(this).attr('data-sizeactive');
+ 		$id =  $(this).attr('id')
+ 		$price = $(this).attr('data-price')
+ 		$category = $(this).attr('data-category')
+ 		$jColors = jQuery.parseJSON($(this).attr('data-colors'))
+ 		$colorActive = $(this).attr('data-coloractive')
+ 		$jSizes = jQuery.parseJSON($(this).attr('data-sizes'))
+ 		$sizeActive = $(this).attr('data-sizeactive')
 
  		if($.isInOrderByRandNum($id)){//判斷Car裡面是否有相同的Rand Number
 	 		if($id !=null){//判斷 Rand Number是否為空;空則是沒有按下製造按鈕
@@ -190,7 +190,7 @@ $(function(){
 		$TemplateItem.find('.id').val($id);//設定商品名稱
 		$TemplateItem.find('.category').val($category);//設定商品類別
 		jQuery.each($jColors, function($index, $color){
-			$TemplateItem.find('select[class="color"]').append('<option value="'+$color.Value+'">'+$color.Name +'</option>');
+			$TemplateItem.find('select[class="color"]').append('<option value="'+$color.value+'">'+$color.name +'</option>');
 		});
 		$TemplateItem.find('select[class="color"] option[value="'+$jColors[$colorActive].Value+'"]').prop('selected', true);
 		jQuery.each($jSizes, function($index, $size){

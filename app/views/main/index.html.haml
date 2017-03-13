@@ -4,7 +4,7 @@
 -#   - product.pictures.each do |picture|
 -#     .img= image_tag picture.asset
 -#   %hr
-
+= render partial: 'orders/cart_item'
 %section#tshirt
   #carousel-example-generic.carousel.slide{"data-interval" => "false", "data-ride" => "carousel"}
     %ol.carousel-indicators
@@ -112,3 +112,21 @@
               %span.total_of_price 0
             %td.col-md-1.actions{"data-th" => ""}
               .renmade-Btn.submitOrder 送出訂單
+
+/ Modal
+#LastOrderItemRemove.modal.fade.LastOrderItemRemove{"aria-labelledby" => "myModalLabel", "data-randnum" => "", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title 注意
+      .modal-body
+        是否要移除此商品？(移除後很難很難很難再轉到一樣的!)
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 取消
+        %button#LastOrderItemRemoveBtn.btn.btn-danger{:type => "button"} 刪除
+
+#AddCarSuccess.alert.alert-success.fade.in.collapse{"aria-label" => "Close", :style => "position: fixed; right: 50px; top: 100px; display: none;z-index: 10000;"}
+  %strong 成功!
+  已經加入購物車.
