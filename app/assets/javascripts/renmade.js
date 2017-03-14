@@ -215,12 +215,12 @@ $(function(){
 		$('.renmade-order').find('table').map(function(){
 			$SubItemIndex = 0;
 			$(this).find('.no').text($ItemIndex+1);
-			$(this).find('.id').attr('name', 'Data['+$ItemIndex+'][id]');
-			$(this).find('.category').attr('name', 'Data['+$ItemIndex+'][category]');
+			$(this).find('.id').attr('name', 'data['+$ItemIndex+'][id]');
+			$(this).find('.category').attr('name', 'data['+$ItemIndex+'][category]');
 			$(this).find('tr').map(function(){
-				$(this).find('select[class=color]').attr('name', 'Data['+$ItemIndex+'][Type]['+$SubItemIndex+'][color]');
-				$(this).find('select[class=size]').attr('name', 'Data['+$ItemIndex+'][Type]['+$SubItemIndex+'][size]');;
-				$(this).find('input[class=quantity]').attr('name', 'Data['+$ItemIndex+'][Type]['+$SubItemIndex+'][quantity]');;
+				$(this).find('select[class=color]').attr('name', 'data['+$ItemIndex+'][type]['+$SubItemIndex+'][color]');
+				$(this).find('select[class=size]').attr('name', 'data['+$ItemIndex+'][type]['+$SubItemIndex+'][size]');;
+				$(this).find('input[class=quantity]').attr('name', 'data['+$ItemIndex+'][type]['+$SubItemIndex+'][quantity]');;
 				$SubItemIndex++;
 			});
 			$ItemIndex++;

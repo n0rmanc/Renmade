@@ -1,0 +1,113 @@
+.container
+  %form#ComplateOrder.form-inline{:action => "/order", "data-toggle" => "validator", :enctype => "application/json", :method => "POST", :name => "basket_form", :novalidate => ""}
+    / 訂購資訊
+    %section#completeOrder
+      .row
+        .col-lg-12.text-center
+          %h2 寄送資訊
+      .row
+        .col-lg-8.col-lg-offset-2
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label 姓名
+              %input#name.form-control{"data-validation-required-message" => "請輸入收件人姓名", :name => "name", :placeholder => "姓名 / name", :required => "", :type => "text"}/
+              %p.help-block.text-danger{:style => "color:red"}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label 聯絡電話
+              %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :name => "phone", :placeholder => "聯絡電話 / mobile", :required => "", :type => "text"}/
+              %p.help-block.text-danger{:style => "color:red"}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label 寄送地址
+              %input#address.form-control{"data-validation-required-message" => "Please enter your shipping address.", :name => "address", :placeholder => "寄送地址 / shipping add", :required => "", :type => "text"}/
+              %p.help-block.text-danger{:style => "color:red"}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Email
+              %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :name => "email", :placeholder => "Email Address", :required => "", :type => "email"}/
+              %p.help-block.text-danger{:style => "color:red"}
+          .row
+            .col-xs-12.floating-label-form-group
+              %label 備註
+              %textarea#message.form-control{:name => "message", :placeholder => "備註 / message (選填)", :rows => "3"}
+          %br/
+      .row
+        .col-lg-12.text-center
+          .btn.btn-lg.renmade-Btn.submitComplateOrder{:type => "submit"} 確認購買
+      .row
+        %p
+          *付款方式
+          %br/
+          \- 請於下訂單日起算2個工作天內透過銀行轉帳匯款或是歐付寶付款。若您採用銀行匯款，請於匯款後郵件通知 renmade.co@gmail.com 我們並附註訂單號碼與匯款帳號後3碼，逾期該筆訂單與隨機款將會被取消。
+          \- 目前暫不支持貨到付款。
+          %br/
+          *配送方式
+          %br/
+          \- 郵寄: 完成付款動作後3~7個工作天，透過宅配/郵局送達，宅配均酌收70元郵寄費用。
+          %br/
+          \- 超商店到店取貨: 請在上方備註處提供所在之超商店鋪編號及店名，透過超商店到店服務寄送，酌收{{Config::get('renmade.post_price')}}元超商取貨費用。
+          %br/
+    %hr.featurette-divider
+    %section#ordertable
+      .row
+        %input{:name => "_token", :type => "hidden", :value => "{{ csrf_token() }}"}
+          .panel.panel-default.table-responsive.basket_list
+            .panel-heading 訂單明細
+            %table.renmade-table
+              %thead
+                %th.col-md-1.no #
+                %th.col-md-2.image 圖案
+                %th.col-md-2.title{:style => "display: none;"} T
+                %th.col-md-1.color 顏色
+                %th.col-md-1.size 尺寸
+                %th.col-md-1.quantity 數量
+                %th.col-md-1.price 價格
+                %th.col-md-1.subtotal 小計
+                %th.col-md-1.actions
+            .renmade-order
+              - @order.line_items.each_with_index do |line_item|
+                %table.renmade-table{:id => "#{line_item.product_id}"}
+                  - line_item.variants.each_with_index do |variant, index|
+                    - is_main_row = variant == line_item.variants.first
+                    %tr{class: "#{'renmade-table-mainrow' if is_main_row}"}
+                      - if is_main_row
+                        %td.col-md-1.no{:rowspan => "#{line_item.variants.size}"}= index + 1
+                        %td.col-md-2.image{:rowspan => "#{line_item.variants.size}"}
+                          %img.img-rounded{:block => "", "data-holder-rendered" => "true", "display:" => "", :height => "100px", :src => "/assets/customer/{{ $item['id'] }}/{{ $item['Type'][0]['color'] }}.png", :style => "background: rgba(0, 0, 0, 0.2);", :width => "100px"}
+                        %td.col-md-2.title{:rowspan => "#{line_item.variants.size}", :style => "display: none;"}
+                          %input.id{:name => "#{line_item.product_id}", :type => "hidden", :value => "#{line_item.product_id}"}
+                          %input.category{:name => "#{line_item.product.category.name}", :type => "hidden", :value => "#{line_item.product.category.name}"}
+                      %td.col-md-1.color
+                        = variant.color
+                        %input.color{:name => "#{variant.color}", :type => "hidden", :value => "#{variant.color}"}
+                      %td.col-md-1.size
+                        = variant.size
+                        %input.size{:name => "#{variant.size}", :type => "hidden", :value => "#{variant.size}"}
+                      %td.col-md-1.quantity
+                        %input#prod1_qty2.quantity{:name => "#{variant.quantity}", :readonly => "readonly", :type => "text", :value => "#{variant.quantity}"}
+                      %td.col-md-1.price
+                        %span.currency $
+                        %span.amount= line_item.price
+                      %td.col-md-1.subtotal
+                        %span.currency $
+                        %span.amount= variant.quantity * line_item.product.price
+                      %td.col-md-1.actions
+              %table.renmade-table
+                %tr.renmade-tr-row-top
+                  %td.col-md-1.no 總計
+                  %td.col-md-2.image
+                  %td.col-md-2.title{:style => "display: none;"}
+                  %td.col-md-1.color
+                  %td.col-md-1.size
+                  %td.col-md-1.quantity
+                    %span 總共件數:
+                    %span.number_of_tshirt= @order.total_quantity
+                  %td.col-md-1.price
+                  %td.col-md-1.subtotal
+                    %span 總價 $
+                    %span.total_of_price
+                      = "#{@order.total_price}  (含運費)"
+      .row
+        .col-lg-12.text-center
+          .btn.btn-lg.renmade-Btn.submitComplateOrder{:type => "submit"} 確認購買

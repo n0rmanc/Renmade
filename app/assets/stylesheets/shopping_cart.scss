@@ -1,0 +1,246 @@
+/* custom styles */
+.custom_nav {
+	float: none !important;
+}
+
+.custom_nav .pull-right {
+	float: right !important;
+}
+
+.basket_list {
+
+}
+
+.basket_list > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+.product {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 10px;
+	background-color: #fcf8e3;
+	border-top: 1px solid #fbeed5;
+	border-bottom: 1px solid #fbeed5;
+}
+
+.product_description {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.product_price {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.bottom_p {
+	margin: 0;
+}
+
+.bottom_navbar {
+	margin-bottom: 0;
+}
+
+.page-footer {
+	padding-top: 9px;
+	margin: 30px 0 20px;
+	border-top: 1px solid #EEE;
+}
+
+.shopping_cart_list {
+	width: 656px;
+}
+
+/* table styles */
+.basket_list .table {
+
+}
+
+.basket_list .table thead th {
+	white-space: nowrap;
+	padding: 0 8px;
+}
+
+.basket_list .table {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.basket_list .table_header {
+	border: none;
+	margin-bottom: 10px;
+}
+
+.basket_list .table td {
+	border: none;
+}
+
+
+.basket_list .table td.thumb img {
+	border: 1px solid #ddd;
+}
+
+.basket_list .table select,
+.basket_list .table input {
+	margin-bottom: 0;
+}
+
+.basket_list .input-mini {
+	width: 35px;
+}
+
+.btn-super-mini {
+	padding: 0;
+	width: 16px;
+	height: 16px;
+	line-height: 10px;
+	text-align: center;
+}
+
+.btn-super-mini > i {
+	margin: 0;
+}
+
+.basket_list .thumb {width: 70px;}
+.basket_list .description {width: 300px;}
+.basket_list .size {width: 100px;}
+.basket_list .color {width: 100px;}
+.basket_list .quantity {width: 85px;}
+.basket_list .quantity input.number {width: 30px;}
+.basket_list .price {width: 70px;}
+.basket_list .subtotal {width: 70px;}
+
+.basket_list th.description { width: 170px; }
+
+
+.basket_list td.remove {
+	vertical-align: top;
+	padding-top: 11px;
+}
+
+.basket_list td.price,
+.basket_list td.subtotal,
+.basket_list td.size > span,
+.basket_list td.color > span {
+	line-height: 28px;
+}
+
+.basket_list .additional td,
+.basket_list .additional_empty td {
+	padding-top: 0;
+}
+.basket_list .additional td.empty_td,
+.basket_list .additional_empty td.empty_td {
+	padding-top: 0;
+	vertical-align: top;
+}
+
+.basket_list .description > div {
+
+}
+
+.basket_list .item-sku {
+	font-size: 11px;
+	font-weight: bold;
+	color: #999;
+}
+
+.empty_basket {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 20px 25px;
+	display: none;
+}
+
+
+
+.order_blocks {
+	margin-bottom: 20px;
+}
+
+.shipping_block {
+	max-width: 500px;
+	height: 170px;
+
+	border: 1px solid #18bc9c;
+	padding: 5px 15px;
+	margin-bottom: 0;
+    float: left;
+    min-height: 1px;
+    margin-left: 20px;
+}
+
+.total_block {
+	max-width: 356px;
+	height: 170px;
+
+	border: 1px solid #18bc9c;
+	padding: 5px 15px;
+	margin-bottom: 0;
+    float: left;
+    min-height: 1px;
+    margin-left: 20px;
+}
+
+.delivery_block {
+	width: 300px;
+}
+
+.delivery_block select.span3 {
+	width: 180px;
+}
+
+
+.promotional_block {
+	width: 195px;
+}
+
+/* basket total block */
+#basketTotalsList {
+
+}
+
+#basketTotalsList td {
+	width: 85px;
+	text-align: right;
+}
+
+#basketTotalsList .total_position {
+	width: 250px;
+	text-align: left;
+}
+
+#basketTotalsList td > h3 {
+	margin: 0;
+}
+
+/* form error controls */
+.basket_list .error .checkbox,
+.basket_list .error .radio,
+.basket_list .error input,
+.basket_list .error select,
+.basket_list .error textarea {
+	color: #b94a48;
+}
+
+.basket_list .error input,
+.basket_list .error select,
+.basket_list .error textarea {
+	border-color: #b94a48;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.basket_list .error input:focus,
+.basket_list .error select:focus,
+.basket_list .error textarea:focus {
+	border-color: #953b39;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+}

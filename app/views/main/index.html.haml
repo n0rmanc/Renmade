@@ -79,8 +79,7 @@
 %section#ordertable
   .container
     %hr.featurette-divider/
-    %form#shoppingCart.form-inline{:action => "/order", :enctype => "application/json", :method => "POST", :name => "basket_form"}
-      %input{:name => "_token", :onkeypress => "return event.keyCode != 13;", :type => "hidden", :value => "{{ csrf_token() }}"}/
+    = form_tag new_order_path, method: :GET, name: "basket_form", id: :shoppingCart do
       .panel.panel-default.table-responsive.basket_list
         .panel-heading
           訂單明細
