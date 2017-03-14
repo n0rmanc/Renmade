@@ -66,9 +66,9 @@
                 %th.col-md-1.subtotal 小計
                 %th.col-md-1.actions
             .renmade-order
-              - @order.line_items.each_with_index do |line_item|
+              - @order.line_items.each_with_index do |line_item, index|
                 %table.renmade-table{:id => "#{line_item.product_id}"}
-                  - line_item.variants.each_with_index do |variant, index|
+                  - line_item.variants.each do |variant|
                     - is_main_row = variant == line_item.variants.first
                     %tr{class: "#{'renmade-table-mainrow' if is_main_row}"}
                       - if is_main_row
